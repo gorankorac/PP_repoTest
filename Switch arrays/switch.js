@@ -124,29 +124,65 @@ result = '';
 // }
 // console.log(result);
 
-var grade = 'k';
-result = '';
+// var grade = 'k';
+// result = '';
 
-switch (grade) {
-  case 'A':
-   result = "Good job";
-   break;
-  case 'B':
-    result = "Pretty good";
-    break;
-  case 'C':
-    result = "Passed";
-    break;
-  case 'D':
-     result = "Not so good";
-     break;
-  case F:
-      result = "Failed";
-      break;
+// switch (grade) {
+//   case 'A':
+//    result = "Good job";
+//    break;
+//   case 'B':
+//     result = "Pretty good";
+//     break;
+//   case 'C':
+//     result = "Passed";
+//     break;
+//   case 'D':
+//      result = "Not so good";
+//      break;
+//   case F:
+//       result = "Failed";
+//       break;
     
 
-   default:
-    result = 'Unknown grade!';
-    break;  
+//    default:
+//     result = 'Unknown grade!';
+//     break;  
+// }
+// console.log(result);
+
+var city = 'Paris';
+country = '';
+
+switch (city) {
+
+ case 'Paris':
+ case 'Marsej':
+ case 'Nica':
+ case 'Nant':
+    country = 'France';
+    break;
+  case 'New York':
+  case 'Los Angeles':
+  case 'Chicago':
+  case 'Washington':
+    country = 'USA';
+    break;
+  case 'Berlin':
+  case 'Minchen':
+  case 'Frankfurt':
+  case 'Bon':
+     country = 'Germany';
+     break;
+
+ default:
+  country = 'Please choose a different city';
+  break;
 }
-console.log(result);
+
+console.log(country);
+
+
+
+
+
