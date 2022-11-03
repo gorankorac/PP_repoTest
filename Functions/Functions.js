@@ -29,7 +29,7 @@ max(6,6);
 
 function odd(n) {
 
-if (!n %2 === 0) {
+if (n %2 !== 0) {
 console.log('Number is odd');
 }
 }
@@ -64,7 +64,7 @@ console.log('Average number is'+' '+av);
 
 // Second way
 
-var prosek=[10,6,8,9]
+var prosek=[10,6,8,9];
 var sum = 0;
 for(var i = 0; i < prosek.length; i++) {
     sum += prosek[i];
