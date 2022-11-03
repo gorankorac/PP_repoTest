@@ -77,3 +77,21 @@ console.log(avg);
 // * * *
 // * * * * * * *
 
+var result = '';
+for (var i=0; i<3;i++) {
+
+for (var j=0; j<6;j++) {
+  if (i===1 && j===3){
+    result +='\n';
+  } else if (i===2 && j===5) {
+    result +='\n';
+  } else if (i===0 && j===5)
+    result +='\n';
+  else {
+    result +='*'
+  }
+  
+}
+ if (i>3) result += '\n';
+}
+console.log(result);
