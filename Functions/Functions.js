@@ -95,3 +95,51 @@ for (var j=0; j<6;j++) {
  if (i>3) result += '\n';
 }
 console.log(result);
+
+// 7.	Write a program that calculates a number of digits of a given number. 
+
+function countDigit(n)
+{
+    let count = 0;
+    while (n != 0)
+    {
+        n = Math.floor(n / 10);
+        ++count;
+    }
+    return count;
+}
+console.log('Number of digits:' + ' ' + countDigit(123));
+
+// 8.	Write a program that calculates a number of appearances of a given number in a given array.
+// Inputs: a = [2, 4, 7, 8, 7, 7, 1], e = 7
+// Result: 3
+
+var a = [2, 4, 7, 8, 7, 7, 1];
+var e = 7;
+
+
+var mf = 1;
+var m = 0;
+var item;
+for (var i=0; i<a.length; i++)
+{
+        for (var j=i; j<a.length; j++)
+        {
+                if (a[i] == a[j])
+                 m++;
+                if (mf<m)
+                {
+                  mf=m; 
+                  item = a[i];
+                }
+        }
+        m=0;
+}
+console.log(item+" ( " +mf +" times ) ") ;
+
+// 9.	Write a program that calculates the sum of odd elements of a given array. 
+
+
+
+
+
