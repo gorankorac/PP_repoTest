@@ -139,7 +139,18 @@ console.log(item+" ( " +mf +" times ) ") ;
 
 // 9.	Write a program that calculates the sum of odd elements of a given array. 
 
+function oddf(arr, n) {
 
+  var odd=0;
+  for (var i=0; i<n ; i++)
+  if (i % 2 == 0) {
+     odd += arr[i]
+  }
+  console.log('Odd sum is' + ' ' + odd);
+  }
+  var arr=[1,2,3,4,5,6,7,8,9];
+  var n=arr.length;
+  oddf(arr, n);
 
 
 
