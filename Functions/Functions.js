@@ -76,6 +76,8 @@ console.log(avg);
 // * * * * *
 // * * *
 // * * * * * * *
+function draw(k,l,o) {
+
 
 var result = '';
 for (var i=0; i<3;i++) {
@@ -93,6 +95,7 @@ for (var j=0; j<6;j++) {
   
 }
  if (i>3) result += '\n';
+}
 }
 console.log(result);
 
@@ -113,44 +116,141 @@ console.log('Number of digits:' + ' ' + countDigit(123));
 // 8.	Write a program that calculates a number of appearances of a given number in a given array.
 // Inputs: a = [2, 4, 7, 8, 7, 7, 1], e = 7
 // Result: 3
+function pon(a, e){
 
+
+
+var result = 0;
+for (var i=0; i<a.length; i++)
+if (a[i] === e) {
+  result++;
+}
+return result
+}
 var a = [2, 4, 7, 8, 7, 7, 1];
 var e = 7;
-
-
-var mf = 1;
-var m = 0;
-var item;
-for (var i=0; i<a.length; i++)
-{
-        for (var j=i; j<a.length; j++)
-        {
-                if (a[i] == a[j])
-                 m++;
-                if (mf<m)
-                {
-                  mf=m; 
-                  item = a[i];
-                }
-        }
-        m=0;
-}
-console.log(item+" ( " +mf +" times ) ") ;
-
+console.log(pon(a, e));
 // 9.	Write a program that calculates the sum of odd elements of a given array. 
 
 function oddf(arr, n) {
 
-  var odd=0;
+  var sum=0;
   for (var i=0; i<n ; i++)
-  if (i % 2 == 0) {
-     odd += arr[i]
+  if (arr[i] % 2 !== 0) {
+     sum += arr[i]
   }
-  console.log('Odd sum is' + ' ' + odd);
+  console.log('Odd sum is' + ' ' + sum);
   }
   var arr=[1,2,3,4,5,6,7,8,9];
   var n=arr.length;
   oddf(arr, n);
+
+  // 11.	Write a program that concatenates a given string given number of times. For example, if “abc” and 4 are given values, the program prints out abcabcabcabc
+
+function con(x, y) {
+
+  result = '';
+  for (var i=0; i<y; i++) result+=x;
+  return result; 
+
+}
+
+console.log(con('d', 5));
+
+// 1.	Write a function to check whether the `input` is a string or not.
+
+// "My random string" -> true
+// 12 -> false
+
+function check(n){
+
+  var c = typeof n=== 'string' ? 'Yes' : 'No';
+   return c;
+ }
+
+ console.log(check('goran'));
+
+//  2.	Write a function to check whether a string is blank or not.
+
+// "My random string" -> false
+// " " -> true
+// 12 -> false
+// false -> false
+
+function blank(g){
+
+result='';
+if (result.length>0) {
+  console.log('False');
+}
+else{
+  console.log('True');
+}
+return result;
+}
+console.log(blank(''));
+
+// 3.	Write a function that concatenates a given string n times (default is 1).
+// 	"Ha" -> "Ha"
+// "Ha", 3 -> "HaHaHa"
+
+function con(x, y) {
+
+  result = '';
+  for (var i=0; i<y; i++) result+=x;
+  return result; 
+
+}
+
+console.log(con('d', 1));
+
+// 4.	Write a function to count the number of letter occurrences in a string.
+// "My random string", "n" -> 2
+
+function pon(a, e){
+
+  var result = 0;
+  for (var i=0; i<a.length; i++)
+  if (e === a[i]) {
+    result++;
+  }
+  return result
+  }
+  var a = 'My first step of programming';
+  var e = 'i';
+  console.log(pon(a, e));
+
+  // 5.	Write a function to find the position of the first occurrence of a character in a string. The result should be the position of character. If there are no occurrences of the character, the function should return -1
+
+  function letter(r,t) {
+var result = -1;
+for (var i=0; i<r.length; i++)
+if (t===r[i]) {
+  result=i;
+  break;
+}
+return result;
+
+  }
+  var r='Petar';
+  var t='l';
+  console.log(letter(r,t));
+
+  // 6.	Write a function to find the position of the last occurrence of a character in a string. The result should be in human numeration form. If there are no occurrences of the character, function should return -1.
+
+  function letter(r,t) {
+    var result = -1;
+    for (var i=0; i<r.length; i++)
+    if (t===r[i]) {
+      result=i;
+    
+    }
+    return result;
+    
+      }
+      var r='Petae';
+      var t='e';
+      console.log(letter(r,t));
 
 
 
