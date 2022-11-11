@@ -46,7 +46,7 @@ else {
   console.log('Number is not three digit long');
 }
 }
-num(999);
+numb(999);
 
 // 4.	Write a program that calculates an arithmetic mean of four numbers.
 
@@ -252,5 +252,4 @@ return result;
       var t='e';
       console.log(letter(r,t));
 
-
-
+ 

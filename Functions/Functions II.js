@@ -73,13 +73,83 @@
 // }
 // console.log(item+" ( " +mf +" times ) ") ;
 
-let num = [1,2,3,4,5,6,7,8,9];
-console.log('even numbers are');
-for (var i=1; i<10; i+=2) {
-  console.log(i);
+// let num = [1,2,3,4,5,6,7,8,9];
+// console.log('even numbers are');
+// for (var i=1; i<10; i+=2) {
+//   console.log(i);
+// }
+
+// console.log('odd numbers are');
+// for (var i=2; i<10; i+=2) {
+//   console.log(i);
+// }
+
+// var sum = 0;
+// for (i=4; sum<8; i++) {
+
+// if (i==6) {
+//   continue;
+// }
+// sum += i;
+
+// }
+// console.log(sum);
+
+const numb = [0,1,2,3,4,5,6,7,8,9,];
+let odd = [];
+let even = [];
+for (let i = 0; i < numb.length; i++) {
+if (numb[i] % 2 === 1) {
+odd.push(numb[i]);
+} else {
+even.push(numb[i]);
+}
+};
+console.log(`These are your numbers: ${numb}`)
+console.log(`your odd numbers are: ${odd}`);
+console.log(`your even numbers are: ${even}`);
+
+console.log( '1' + '1' );
+console.log('1' + + '2');
+
+function sum (a, b) {
+
+var c = a + b;
+return c;
+
 }
 
-console.log('odd numbers are');
-for (var i=2; i<10; i+=2) {
-  console.log(i);
+sum(1, 2);
+
+function args() {
+
+return arguments;
+
 }
+
+args();
+args(1, 2, 3, 4, true, 'ninja');
+
+function digits(n){
+  var result = 0;                           
+  for (var i = 1; i < n; i *= 10){
+
+ return result;
+
+ }
+console.log(digits(55555));
+
+function digits(n) {
+
+  var count=0;
+  for (i=0; i<n; i++) {
+    if(n>0) count++;
+
+    
+  }
+  return count;
+  }
+  console.log(digits(123));
+
+
+
