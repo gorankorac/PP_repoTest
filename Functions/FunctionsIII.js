@@ -143,6 +143,61 @@ function fg(m,n) {
   }
   console.log(fg (5, 3));
 
+  // 8.	Write a function to find a word within a string.
+
+  // 'The quick brown fox', 'fox' -> "'fox' was found 1 times"
+  // 'aa bb cc dd aa', 'aa' -> "'aa' was found 2 times"
+
+function f(a,b) {
+
+var c='';
+for(var i=0; i<a.length; i++) {
+if (a[i] === b[i] ) { 
+
+c++
+
+}
+}
+return c
+}
+var a = 'The quick brown fox';
+var b = 'fox';
+console.log(f(a, b));
+
+{
+  var x = 2;
+}
+console.log(x);
+
+
+  
+
+
+//   10.	Write a program to find the most frequent item of an array.
+
+// [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
+
+var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+var mf = 1;
+var m = 0;
+var item;
+for (var i=0; i<arr1.length; i++)
+{
+        for (var j=i; j<arr1.length; j++)
+        {
+                if (arr1[i] == arr1[j])
+                 m++;
+                if (mf<m)
+                {
+                  mf=m; 
+                  item = arr1[i];
+                }
+        }
+        m=0;
+}
+console.log(item+" ( " +mf +" times ) ") ;
+
+
 
 
 

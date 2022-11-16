@@ -89,3 +89,137 @@ function rev(n) {
 }
 
 console.log(rev('123456'))
+
+
+function mean(a) {
+  var sum=0;
+
+for (var i=0; i<a.length; i++) {
+
+  sum+=a[i]
+
+}
+return (sum/4);
+}
+var a = [1,2,3,4];
+// var avg=sum/a.length
+console.log(mean(a));
+
+// 8.	Write a program that calculates a number of digits of a given number. 
+
+function num(s) {
+
+var d=0;
+for (var i=0; i<s.length; ++i) {
+
+  ++d;
+
+}
+
+return d;
+
+}
+var s='123456';
+console.log(num(s));
+
+let vn = 10;
+for (let i=2; i<=vn; i++) {
+
+let count = 0;
+console.log(`i = ${i}`);
+
+for (let j=2; j<=i; j++) {
+
+console.log(`j = ${j}`);
+
+if (i % j == 0) ++count;
+
+console.log(`count = ${count}`);
+
+if (count > 1) break;
+
+}
+if (count == 1) console.log(i);
+ }
+
+ // YouTube Nested Loops
+
+ for (let i = 0; i < 5; i++) { 
+ console.log(`The current value of i is: ${i}`);
+
+ for (let j = 0; j < 5; j++) {
+
+console.log(`j: ${j}`);
+
+ }
+ console.log("---------------------------");
+}
+
+for (let i = 0; i < 11; i++) {
+  for (let j = 0; j < 11; j++) {
+     console.log(`${i} * ${j} = ${i*j}`);
+ }
+ console.log('---------------------');
+  }
+
+  // 9.	Write a program that calculates a number of appearances of a given number in a given array.
+  // Inputs: a = [2, 4, 7, 8, 7, 7, 1], e = 7
+  // Result: 3
+
+  var a = [2,4,7,8,7,7,1]
+  var e = 7;
+  var f = 0;
+  for (i=0; i<a.length; i++) {
+
+    if (e === a[i]) {
+
+      f++
+    } 
+    
+   }  
+   console.log(f);
+
+  //  12.	Write a program that concatenates a given string given number of times. For example, if “abc” and 4 are given values, the program prints out abcabcabcabc. 
+
+function con(a,b) { 
+  
+  var n = '';
+  for (i=0; i<b; i++) {
+
+   n+=a;
+
+  }
+  return n
+}
+
+  console.log(con('jigle', 5));
+
+
+
+  var scope = "global";
+
+  function checkScope() {
+     // Declare a local variable with the same name
+     var scope = "local";
+  
+     // Return the local value, not the global one
+     return scope;
+  }
+  var result = checkScope() // => "local"
+  
+  console.log(scope); 
+  console.log(result);
+
+
+  var global = 123;
+
+function myFunc() {
+   console.log(global);
+   var global = 1;
+   console.log(global);
+}
+
+myFunc();
+
+  
+
