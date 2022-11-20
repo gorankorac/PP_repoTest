@@ -221,5 +221,30 @@ function myFunc() {
 
 myFunc();
 
-  
+var res = '\n';
+for (var i = 0; i < 5; i++) {
+    for (var j = 0; j < 5; j++) {
+        res += '*\t';
+    }
+    res += '\n';
+}
+console.log(res);
+
+function args() {
+
+  return arguments;
+
+}
+args();
+
+args(1, 2, 3, 4, true, 'ninja');
+
+console.log(2 + true);
+
+  for (var i=0; i<5;) { 
+    console.log('*')
+
+  }
+
+  console.log(++10);
 

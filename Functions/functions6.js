@@ -156,6 +156,28 @@ for (var i=0; i<12; i++) {
   console.log('------------------------------');
 }
 
+// second way
+function n(a) {  
+
+  var m = '';
+
+for (var i=0; i<a; i++) {
+  for (var j=0; j<a; j++) { 
+    
+    var c = i*j;
+    var b = i + '*' + j
+
+    m += (b + '=' + c + '\n');
+    
+  }
+  console.log('-------------');
+}
+
+return m;
+
+}
+console.log(n(12));
+
 // 6.	Write a function to input temperature in Centigrade and convert to Fahrenheit.
 
 
