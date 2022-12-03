@@ -248,3 +248,272 @@ console.log(2 + true);
 
   console.log(++10);
 
+  function a() {
+    console.log('A!');
+    return function () {
+        console.log('B!');
+    };
+ }
+
+ function printMultiplicationTable(a) {
+  var table = "";
+  for (var i = 1; i <= 12; i++) {
+      table += a + " * " +i + " = " + a *i + "\n";
+  }
+  return table;
+}
+var a4 = printMultiplicationTable(2);
+console.log(a4);
+ 
+var f = function () {
+  return 1;
+};
+
+f(4);
+console.log(f(4));
+
+// Write IIFE that replaces the first and the last element of the given array and prints out its
+// elements.
+// Input array: [4, 5, 11, 9]
+// Output array: [ 9, 5, 11, 4]
+
+
+function f(a) { 
+var b = [];
+
+for (var i = 0; i < a.length; i++) {
+ if (a[i] === a[a.length-1]) {
+
+  a[i]=a[0]
+
+ } else {
+
+
+ }
+  b[i] = a[i]
+
+  }
+ return b;
+}
+
+var a = [4, 5, 11, 9];
+console.log(a);
+
+function f(a) { 
+  var b = [];
+  var c = a[0]
+  for (var i = 0; i < a.length; i++) {
+   if ( a[i] === a[a.length-1] ) {
+    c = a[0] 
+   } else if (a[i] === a[0]) {
+
+    c = a[a.length-1]
+
+   }
+    b[b.length] = c
+
+
+    }
+   return b;
+  }
+  
+  var m = f([4, 5, 11, 9]);
+  console.log(m);
+
+
+  for (var i=0; i<a.length; i++) {
+    if (a[i] = a.length-1) {
+         = a[i];
+    }
+}
+
+function replaceFirstAndLast(array) {
+  var newArray = [], temp = array[0];
+  for (var i = 0; i < array.length; i++) {
+      var element = array[i];
+      if (element === array[array.length-1]) {
+          element = array[0];
+      } else if (element === array[0]) {
+          element = array[array.length-1];
+      }
+      temp = element;
+      newArray[newArray.length] = temp;
+  }
+  return newArray
+}
+
+var z = replaceFirstAndLast([4, 5, 11, 9]);
+console.log(z)
+
+function replaceFirstAndLast(array) {
+  var temp = array[0];
+  array[0] = array[array.length-1];
+  array[array.length-1] = temp;
+  return array
+}
+
+var z = replaceFirstAndLast([4, 5, 11, 9]);
+console.log(z)
+
+// F-je povratnog poziva
+
+function outer(param) {
+	
+  function inner(theinput) {
+      return theinput * 2; 
+  }
+ 
+  return 'The result is ' + inner(param);
+}
+
+ console.log(outer(2));
+
+ function mult(a, b, c) {
+
+  var i, ar = [];
+  for (i=0; i<3; i++) {
+
+    ar[i] = arguments[i]*2;
+  }
+  return ar;
+
+ }
+console.log(mult(1, 2, 3));
+
+function filter(a, cb) {
+  var b = [];
+  for (var i = 0; i < a.length; i++) {
+    var element = a[i];
+    var isConditionTrue = cb(element);
+    if (isConditionTrue) {
+      b[b.length] = a[i];
+    }
+  }
+
+  return b;
+}
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+var resEven = filter(arr, function (e) {
+  return e % 2 === 0;
+});
+console.log(resEven);
+
+// 1.	Write IIFE that replaces the first and the last element of the given array and prints out its elements. 
+// 	Input array: [4, 5, 11, 9]
+// 	Output array: [ 9, 5, 11, 4]
+
+function f(a) {
+
+var temp = a[0];
+a[0]=a[a.length-1];
+a[a.length-1]=temp;
+
+return a;
+
+}
+
+var b = f([4, 5, 11, 9]);
+console.log(b);
+
+a = [4, 5, 11, 9];
+var temp=a[0];
+console.log(temp);
+a[0]=a[a.length-1]
+a[a.length-1]=temp
+console.log(a);
+
+
+
+function filter(a, cb) {
+  var b = [];
+  for (var i = 0; i < a.length; i++) {
+    var element = a[i];
+    var isConditionTrue = cb(element);
+    if (isConditionTrue) {
+      b[b.length] = a[i];
+    }
+  }
+
+  return b;
+}
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+var resEven = filter(arr, function (e) {
+  return e % 2 === 0;
+});
+console.log(resEven);
+
+ar output = toString(0.15);
+console.log(output); /// not function
+var toString = function (num) {
+  var result = num + "";
+  return result;
+};
+var toString; // undefined
+var output; // undefined
+output = toString(0.15); //=>  undefined(0.15);
+console.log(output); //greska
+toString = function (num) {
+  var result = num + "";
+  return result;
+};
+white_check_mark
+eyes
+raised_hands
+
+
+
+
+
+12:38
+var toString = function (num) {
+  var result = num + "";
+  return result;
+};
+var output = toString(0.15);
+console.log(output);
+var toString;
+var output;
+toString = function (num) {
+  var result = num + "";
+  return result;
+};
+output =  toString(0.15);
+console.log(output);
+
+
+
+  
+function sum(num1, num2) {
+  console.log(num1, num2);
+  num1 = num1 || 0;
+  num2 = num2 || 0;
+  console.log(num1, num2);
+  if (!num1 && !num2) {
+    return -1;
+  }
+  return num1 + num2;
+}
+var sumNumbers = sum;
+var result = sumNumbers(undefined, 5);
+console.log(result);
+
+
+
+
+function sum(num1, num2) {
+  console.log(num1, num2);
+  num1 = num1 || 0;
+  num2 = num2 || 0;
+  console.log(num1, num2);
+  if (!num1 && !num2) {
+    return -1;
+  }
+  return num1 + num2;
+}
+var sumNumbers = sum;
+var result = sumNumbers();
+console.log(result);
+// console.log(false || "" || NaN || false || "CAO" || undefined);
+console.log(true && "x" && NaN && false && "CAO" && undefined);
