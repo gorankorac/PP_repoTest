@@ -517,3 +517,34 @@ var result = sumNumbers();
 console.log(result);
 // console.log(false || "" || NaN || false || "CAO" || undefined);
 console.log(true && "x" && NaN && false && "CAO" && undefined);
+
+
+var hero = {
+  name: 'Leonardo',
+  kind: 'Turtle',
+  occupation: 'Ninja',
+  say: function (params) {
+      return 'I am ' + hero.occupation;
+  }
+};
+
+hero.say()
+console.log(hero.say());
+hero['say']();
+
+//jajajajaj
+
+var arrRef = ["Hi!"];
+var arrRef2 = arrRef;
+console.log(arrRef === arrRef2); 
+console.log(arrRef2);
+
+console.log([1]===[1]);
+
+console.log(null===null);
+
+console.log(false || "" || NaN || false || "CAO" || undefined);
+console.log(true && "x" && NaN && false && "CAO" && undefined);
+
+
+var a = false || "" || NaN || false || "CAO" || undefined;
