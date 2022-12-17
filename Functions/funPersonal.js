@@ -548,3 +548,311 @@ console.log(true && "x" && NaN && false && "CAO" && undefined);
 
 
 var a = false || "" || NaN || false || "CAO" || undefined;
+
+//  
+
+let a = [5,10,15];
+let b = ['A', 'B', 'C'];
+
+var newList = function(a,b)
+{
+  let l = a.length+b.length;
+  let r = [];
+  let j=0,k=0;
+  for(let i=0; i<l;i++) {
+    if(i%2==0) {
+      r[i]=a[j++];
+    } else {
+      r[i]=b[k++];
+    }
+  }
+  return r;
+}
+
+console.log(newList(a,b));
+
+
+
+function len(a,b) {
+
+var h=[];
+
+for(var i=0; i<a.length; i++) {
+
+  h[h.length]=a[i]
+  h[h.length]=b[i]
+}
+return h
+}
+
+var a = [5,10,15];
+var b = ['A', 'B', 'C'];
+var c = len([5,10,15], ['A', 'B', 'C']);
+
+console.log(c);
+
+
+var convertStringToArr = function (string) {
+  var count = 0;
+  var newArr = [];
+  var testArr = [];
+  newArr[0] = "";
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] === " " || string[i] === ",") {
+      count++;
+      newArr[count] = "";
+    } else {
+      newArr[count] += string[i];
+    }
+  }
+  for (var i = 0; i < newArr.length; i++) {
+    if (newArr[i] === "") continue;
+    testArr[testArr.length] = newArr[i];
+  }
+  return testArr;
+};
+var genereteLine = function (input) {
+  var line = "* ";
+  for (var i = 0; i < input; i++) {
+    line += "*";
+  }
+  line += " *\n";
+  return line;
+};
+var printWords = function (string) {
+  var input = typeof string === "string" ? convertStringToArr(string) : string;
+  var letterLength = input.length - 1;
+  var word = "* ";
+  var line = genereteLine(input.length);
+  for (var i = 0; i < input.length; i++) {
+    for (var j = 0; j < input.length; j++) {
+      var el = typeof input[i][j] === "undefined" ? " " : input[i][j];
+      word += el;
+      if (j === letterLength) {
+        word += " *\n";
+        if (i === letterLength && j === letterLength) {
+          word += "";
+        } else {
+          word += "* ";
+        }
+      }
+    }
+  }
+  return line + word + line;
+};
+var x = printWords("Hello, World in a frame");
+console.log(x);
+
+
+var x= 0.1;
+var y= 0.2;
+var z = (x*10 + y*10)/10
+console.log(z);
+// petlja u petlji primer princip rada...
+function occur(arr) {
+
+  for(var i=0; i<arr.length; i++) {
+
+    for(var j=0; j<arr.length; j++) {
+
+      console.log(arr[i],arr[j]);
+
+    }
+    console.log('-----------------');
+  }
+
+
+} 
+occur(['a', 'b', 'c'])
+
+
+var a = [[1,2,1,24], [8,11,9,4], [7,0,7,27]];
+for (var i in a) {
+  console.log('row ' + i);
+  for (var j in a[i]) {
+    console.log(' ' + a[i][j]);
+  }
+}
+
+// Write a functional expression that duplicates each element of a given array.
+// Input: []
+// Output: [2, 2, 4, 4, 7, 7, 11, 11, -2, -2, 1, 1]
+
+var arr = [2, 4, 7, 11, -2, 1]
+
+var b = arr.map(item => [item, item]).flat();
+
+console.log(b);
+
+
+
+
+
+function f(arr) {
+
+
+var c = [];
+ for (var i = 0; i<arr.length; i++) {
+
+    for (var j=i+1; j<arr.length; j++) {
+
+      if(arr[i]==arr[j]) {
+        c[c.length]=arr[i]
+        c[c.length]=arr[j]
+      }
+
+      // c[c.length]=arr[i]
+      // c[c.length]=arr[j]
+      
+    }
+
+ }
+ return c
+}
+
+var arr = [2, 4, 7, 11, -2, 1]
+var n = f(arr);
+console.log(n);
+
+
+function h(arr, m) { 
+  var temp=[];
+for (var i = 0; i<arr.length; i++) {
+
+  for (var j=0; j<m.length; j++) {
+
+        temp[temp.length]=arr[i]
+
+     }
+    }
+    return temp;
+  }
+
+  var arr = [2, 4, 7, 11, -2, 1]
+  var m = 2;
+  var r = h(arr, m)
+  console.log(r);
+
+  var arr = [2, 4, 7, 11, -2, 1];
+  for (var i = 0; i<arr.length; i++) {
+
+    for (var j=0; j<2; j++) {
+  
+         console.log(arr[i]);
+  
+    }
+      
+  }
+
+  var arr = [2, 4, 7, 11, -2, 1]
+  for(i=0;i<arr.length;i++)
+  {
+      count=0;
+      for(j=0;j<2;j++)
+      {
+          if( i!=j && (arr[i]>arr[j]) )
+          {
+              count++;
+          }
+      }
+      // printf("%lld ",count);
+      console.log(arr);
+  }
+
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      for (var k = 0; k < arr.length; k++) {
+        console.log(
+          arr[i],
+          "PRVA PETLJA")
+    //       arr[j],
+    //       "DRUGA PETLJA",
+    //       arr[k],
+    //       "TRECA PETLJA"
+    //     );
+    //   }
+    //   console.log("CEO KRUG ZA TRECU ");
+    // }
+    // console.log("CEO KRUG ZA DRUGU ");
+  // }
+
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      for (var k = 0; k < arr.length; k++) {
+        console.log(
+          arr[i],
+          "PRVA PETLJA",
+          arr[j],
+          "DRUGA PETLJA",
+          arr[k],
+          "TRECA PETLJA"
+        );
+      }
+      console.log("CEO KRUG ZA TRECU ");
+    }
+    console.log("CEO KRUG ZA DRUGU ");
+  }
+
+  var arr = ["A", "B", "C"];
+for (var i = 0; i < arr.length; i++) {
+  for (var j = 0; j < arr.length; j++) {
+    for (var k = 0; k < arr.length; k++) {
+      console.log(
+        arr[i],
+        "PRVA PETLJA",
+        arr[j],
+        "DRUGA PETLJA",
+        arr[k],
+        "TRECA PETLJA"
+      );
+    }
+    console.log("CEO KRUG ZA TRECU ");
+  }
+  console.log("CEO KRUG ZA DRUGU ");
+}
+
+var arr = ["A", "B", "C"];
+for (var i = 0; i < arr.length; i++) {
+  for (var j = 0; j < arr.length; j++) {
+    for (var k = 0; k < arr.length; k++) {
+      console.log(
+        arr[i],"PRVA PETLJA", arr[j],
+        "DRUGA PETLJA")
+        
+
+            }
+          }
+        }
+
+
+        var arr = [2, 4, 7, 11, -2, 1];
+        var a = arr.reduce(function (newArr, el, index, arr) {
+          newArr[index] = (el + "," + el).split(",");
+          return newArr;
+        }, []);
+        console.log(a);
+        // var arr = [2, 4, 7, 11, -2, 1];
+        // var newArr = [];
+        // arr.forEach((el) => newArr.push(el, el));
+        // console.log(newArr);      
+        var arr = [2, 4, 7, 11, -2, 1];
+        var newVal = arr.reduce(
+          function (obj, el, index, arr) {
+            var temp = obj.minVale;
+            console.log(temp);
+            if (temp > el) {
+              temp = el;
+            }
+            obj.minVale = temp;
+            obj.lastIndex = arr.lastIndexOf(temp);
+            return obj;
+          },
+          { minVale: 0, lastIndex: 0 }
+        );
+        console.log(newVal, "NEW VALUE");   
+        
+        var arr = [2, 3, 8, -2, 11, 4];
+var newVal = arr.filter(function (el) {
+  return el < 6;
+});
+console.log(newVal);

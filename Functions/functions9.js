@@ -42,6 +42,8 @@ console.log(m);
       return b;
     })("Programming in JS is super interesting!");
 
+    // daje minimalnu vrednost
+
     var a = [1,2,3,-9,5,8]
     var g = Infinity
     for (var i = 0; i<a.length; i++) {

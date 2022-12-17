@@ -26,4 +26,18 @@ if (br[i]<br[i+1])
 
 console.log(br[br.length-1])
 
+var arr = ["A", "B", "C"];
+for (var i = 0; i < arr.length; i++) {
+  for (var j = 0; j < arr.length; j++) { 
+    for (var k = 0; k < arr.length; k++) {
+
+    
+  console.log(
+    arr[i],
+    "PRVA PETLJA", arr[j], 'druga petlja', arr[k], 'TRECA P.')
+  }
+  console.log("CEO KRUG ZA TRECU ");
+}
+console.log("CEO KRUG ZA DRUGU ");
+}
 

@@ -1,20 +1,7 @@
 
 // 1.	Write a function to count vowels in a provided string. Vowels are a, e, i, o, and u as well as A, E, I, O, and U. 
 
-function f(a) {
 
-  var b = [];
-  for (var i=0; i<a.length; i++) {
-
-    b++;
-
-  } 
-    return b;
-
-}
-
-var a = ['a', 'e', 'i', 'o',];
-console.log(f(a));
 
 // 2.	Write a function that combines two arrays by alternatingly taking elements.
 
@@ -25,12 +12,8 @@ function f(a, b) {
   var c = []
   for (var i=0; i<a.length; i++) {
 
-    for (var j=0; j<b.length; j++ ) {
-
-      // a[i]=b[j]
-      c+=a[i]+b[j]
-
-    }
+   c[c.length]=a[i];
+   c[c.length]=b[i]
 
   }
   return c;
@@ -39,95 +22,66 @@ function f(a, b) {
 var a = ['s', 'd', 'g'];
 var b = [1,2,3];
 console.log(f(a, b));
-// kraj mog zadatka
 
-// pocetak novog resenja
-const arr1 = [34, 21, 2, 56, 17];
-const arr2 = [12, 86, 1, 54, 28];
-let run = 0, first = 0, second = 0;
-const newArr = [];
-while(run < arr1.length + arr2.length){
-   if(first > second){
-      newArr[run] = arr2[second];
-      second++;
-   }else{
-      newArr[run] = arr1[first];
-      first++;
-   }
-   run++;
-};
-console.log(newArr);
-// kraj
-
-// pocetak
-var abc = ['a', 'b', 'c', 'd' ];
-var one = [1, 2, 3 ];
-
-var both = interleave(abc, one);
-console.log(both);
-// ['a', 1, 'b', 2, 'c', 3, 'd']
-
-// pocetak
-
-var a = ['s', 'd', 'g'];
-var b = [1,2,3];
-
-var together = a.concat(b)
-
-console.log(together);
-
-//kraj
-
-// Najbolje resenje
-
-var list_one = [1,3,5];
-var list_two = ['a','b','c'];
-var array = [];
-var array_length = list_one.length+list_two.length;
-let j=0,k=0;
-for (var i = 0; i < array_length; i++) {
-  if(i%2 == 0) {
-    array[i] = list_one[k++]
-  }else{
-    array[i] = list_two[j++]
-  }
-}
-console.log(array)
 
 // 3.	Write a function that rotates a list by k elements.
 
 // For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]
 
-function Rotate_and_Print(arr,d,n)
- {
-     //Initializing array temp with size n
-     var temp=new Array(n);
+ function Rotate_and_Print(arr,d,n)
+  {
+      //Initializing array temp with size n
+      var temp=new Array(n);
       
-    let k = 0;
+     let k = 0;
  
-    // Storing the n - d elements of
-    // array arr[] to the front of temp[]
-    for (let i = d; i < n; i++) {
+     // Storing the n - d elements of
+     // array arr[] to the front of temp[]
+     for (let i = d; i < n; i++) {
+         temp[k] = arr[i];
+         k++;
+     }
+ 
+     // Storing the first d elements of array arr[]
+     //  into temp
+     for (let i = 0; i < d; i++) {
         temp[k] = arr[i];
-        k++;
-    }
+         k++;
+     }
+     //Printing the temp array which stores the result
+     for (let i = 0; i < n; i++) {
+         console.log(temp[i]+" ");
+     }
+  }
  
-    // Storing the first d elements of array arr[]
-    //  into temp
-    for (let i = 0; i < d; i++) {
-        temp[k] = arr[i];
-        k++;
+ let arr = [ 1, 2, 3, 4, 5, 6, 7 ];
+ let n = arr.length;
+ let d = 2; //number of times rotating the array
+ Rotate_and_Print(arr, d, n);
+
+
+function f(arr, k) {
+
+  var arr1=[]
+  for(var i=k,j=k-arr.length; i<arr.length+k; i++, j++) {
+
+    //  console.log(arr[j]);
+     console.log(i,j);
+     
+    // arr1[arr1.length]=arr[i]
+    if (i<arr.length) {
+      arr1[arr1.length]=arr[i]
+    } else {
+      arr1[arr1.length]=arr[j]
     }
-    //Printing the temp array which stores the result
-    for (let i = 0; i < n; i++) {
-        console.log(temp[i]+" ");
-    }
- }
- 
-let arr = [ 1, 2, 3, 4, 5, 6, 7 ];
-let n = arr.length;
-let d = 2; //number of times rotating the array
-Rotate_and_Print(arr, d, n);
+  }
+      console.log(arr1);
+      return arr1
+}
+f([1, 2, 3, 4, 5, 6, 7], 2)
+
+
+
 
 // 4.	Write a function that takes a number and returns array of its digits.
 
@@ -145,6 +99,21 @@ function numReturn(x) {
 var x = 5;
 console.log(numReturn(x));
 //nesto nije kako treba, ne mogu niz da dobijem
+
+function ret(num) {
+
+  var s=''+num;
+  var d=[];
+  for(var i=0; i<s.length; i++) {
+
+    console.log(s[i]);
+    d[d.length]=+s[i] // kad udarim + s[i] postaju brojevi, bez + su stringovi!!!
+  }
+    console.log(d);
+    return d
+}
+
+ret(555);
 
 // 5.	Write a program that prints a multiplication table for numbers up to 12.
 
@@ -228,3 +197,47 @@ return max;
 // Driver code 
 let arr = [10, 324, 45, 90, 9808];
 console.log(largest(arr));
+
+// 8.	Write a function to find the maximum and minimum elements. Function returns an array.
+
+// 10.	Write a function to find the element that occurs most frequently.
+
+function occur(arr) {
+  var output='';
+  var maxCount=0;
+
+  for(var i=0; i<arr.length; i++) {
+
+    var count = 0;
+
+    for(var j=0; j<arr.length; j++) {
+
+      //  console.log(arr[i],arr[j]);
+      if (arr[i]===arr[j]) {
+        count++;
+       console.log(arr[i],count);
+      }
+      if(count>maxCount) {
+        maxCount=count;
+        // console.log(arr[i]);
+        output=arr[i]
+      }
+    }
+    console.log('-----------------');
+  }
+
+console.log(output);
+} 
+occur(['a', 'b', 'c', 'a', 'a', 'c', 'd', 'c', 'c'])
+
+
+var original = {
+
+  brojac:1
+
+}
+
+var kopija = {...original}
+
+kopija.brojac = 100;
+console.log(original.brojac);
