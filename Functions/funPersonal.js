@@ -856,3 +856,23 @@ var newVal = arr.filter(function (el) {
   return el < 6;
 });
 console.log(newVal);
+
+function sumAll (a, b, c) {
+
+  return a + b + c;
+
+}
+var numbers = [6, 7, 8];
+// console.log(sumAll.apply(null, numbers));
+
+console.log(sumAll(numbers));
+
+var global = 1;
+function f() {
+
+var local = 2;
+global++;
+return global;
+
+}
+f();
