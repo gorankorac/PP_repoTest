@@ -8,11 +8,13 @@ function convertToNumber(arr) {
   var newArr = [];
   for (var i = 0; i < arr.length; i++) {
     if (!isNaN(arr[i]) && (isFinite(arr[i]))) {
-      newArr[i]=arr[i]
+      newArr[newArr.length]=(parseFloat(arr[i]))
+     
     }
   }
   return newArr;
 }
 var k = convertToNumber(arr)
+
 console.log(k);
 

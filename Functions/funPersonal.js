@@ -876,3 +876,727 @@ return global;
 
 }
 f();
+
+// Zadatak
+
+function add(num) {
+  num = num || 0;
+  num++;
+  return num;
+}
+var x = ["Stefan", "Goran", "Jovan", "Radasin", "Stefan", "Goran"];
+var nesto = x.reduce(function (obj, el, index, arr) {
+  obj[el] = add(obj[el]);
+  return obj;
+}, {});
+console.log(nesto);
+
+// { Stefan: 2, Goran: 2, Jovan: 1, Radasin: 1 }
+
+
+var result = true;
+
+function subtract(first, second) {
+   return first - second;
+}
+
+result = subtract(12, -10);
+console.log(result);
+
+result = subtract(22, 2);
+
+console.log(result);
+
+'use strict';
+
+myVar = "random";
+
+function addOne(num) {
+   return num + 1;
+}
+
+var result = addOne(4);
+console.log(result);
+
+'use strict';
+
+var result = square(10);
+console.log(result);
+
+function square(num) {
+   num *= num;
+  return num;
+  }
+
+  function toString(num) {
+    result = num + '';
+    // return result;
+ }
+ 
+ toString(5);
+ console.log(result);
+ 
+ function toString(num) {
+  'use strict';
+    result = num + '';
+ 
+     return result;
+  }
+  
+  var result; 
+  toString(25);
+  console.log(result);
+
+  var toString = function (num) {
+    num = num || '';
+    var result = num + '';
+    return result;
+ }
+ 
+ var output = toString;
+ console.log(output(25));
+
+ var x = 21;
+var girl = function () {
+  console.log(x);
+    x = 20;
+    
+
+};
+girl();
+console.log();
+
+typeof console.log;
+
+(function () {
+   return console.log;
+})()('Boo!')
+
+
+var print = (function () {
+  return console.log;
+})();
+print("This might work or not?");
+
+var input = ["one", "1e3", "10e-3", "32", "a15", "12,1"]
+
+function transformArray(array, action) {
+  var result = [];
+  for (var index = 0; index < array.length; index++) {
+      var element = array[index];
+      result[index] = action(element);
+  }
+  return result;
+}
+
+var output = transformArray(input, parseFloat);
+console.log(output);
+
+var cubeVolume = function (a) {
+  return a * a * a;
+}
+
+function cubeCalculation(a, calc) {
+  return calc(a);
+}
+
+output = cubeCalculation(10, cubeVolume)
+console.log(output);
+
+function cubeCalculation(a, calc) {
+  return calc(a);
+}
+
+var output = cubeCalculation(10, function (a) {
+  6 * a * a;
+})
+console.log(output);
+
+function saySomething(msg1) {
+  return function (msg2) {
+      var output = msg1 + " " + msg2;
+      return function () {
+          output += "!"
+          console.log(output);
+      }
+  }
+}
+
+saySomething("Hi")("there")();
+
+function f() {
+
+fun(2, 5);
+zbir(2, 5);
+
+var fun = zbir;
+
+function zbir(a, b) {
+
+console.log(a + b);
+
+}
+
+fun(10, 15);
+zbir(10, 15);
+
+}
+
+fun(1, 2);
+zbir(1, 2);
+
+function zbir() {
+
+  var r = 0;
+  for (var i = 0; i<arguments.length; i++) {
+
+    r += arguments[i];
+
+  }
+return r;
+}
+ 
+zbir(5, 6, 10);
+console.log(zbir(5, 6, 10));
+
+var a = 20;
+
+function f(n) {
+
+var res =  a + n
+a = 30
+return res;
+
+}
+
+
+console.log(f(5));
+
+
+(function() {
+  console.log('sss');
+}) ();
+
+console.log(n);
+var n=5;
+
+
+var b = 45 % 10;
+console.log(b);
+
+var a = 10;
+function f(a, b) {
+
+  a++;
+  b--;
+  console.log(a, b);
+
+}
+f(a, 2);
+console.log(a);
+ 
+var a, b;
+function calculate(a, b) {
+
+  var rb = b % 10;
+  var ra = a % 10;
+
+  a = a - ra + rb;
+  b = b - rb + ra;
+ 
+  console.log(a, b);
+} 
+
+calculate (123, 45)
+
+'use strict';
+
+(function () {
+  function Genre(n) {
+    if (!n) {
+      throw new Error('Property name is required');
+    }
+    this.name = n;
+    this.getData = function () {
+      var firstLetter = this.name[0];
+      var lastLetter = this.name[this.name.length - 1];
+      var result = firstLetter + lastLetter;
+      return result.toUpperCase();
+    };
+  }
+
+  function Movie(t, g, l) {
+    if (!t || !g || !l) {
+      throw new Error('Missing propertied!');
+    }
+    if (!(g instanceof Genre)) {
+      throw new Error('Invalid genre input!');
+    }
+    this.title = t;
+    this.genre = g;
+    this.lengthOfMovie = l;
+    this.getData = function () {
+      return (
+        this.title + ', ' + this.lengthOfMovie + 'min, ' + this.genre.getData()
+      );
+    };
+  }
+
+  function Program(d) {
+    if (!d) {
+      throw new Error('Property date is required');
+    }
+    this.date = new Date(d);
+    this.movieList = [];
+    this.getNumberOfMovies = function () {
+      return this.movieList.length;
+    };
+    this.addMovie = function (m) {
+      if (!(m instanceof Movie)) {
+        throw new Error('Invalid movie input!');
+      }
+      this.movieList.push(m);
+    };
+    this.getTotalLength = function () {
+      var total = 0;
+      this.movieList.forEach(function (movie) {
+        total += movie.lengthOfMovie;
+      });
+      return total;
+    };
+    this.getData = function () {
+      var day = this.date.getDate();
+      var month = this.date.getMonth() + 1;
+      var year = this.date.getFullYear();
+      var result =
+        day +
+        '.' +
+        month +
+        '.' +
+        year +
+        ', program duration ' +
+        this.getTotalLength() +
+        'min';
+      this.movieList.forEach(function (movie) {
+        result += '\n\t\t' + movie.getData();
+      });
+      return result;
+    };
+  }
+
+  function Festival(n) {
+    if (!n) {
+      throw new Error('Property name is required');
+    }
+    this.name = n;
+    this.programList = [];
+    this.getTotalNumberOfMovies = function () {
+      var total = 0;
+      this.programList.forEach(function (program) {
+        total += program.getNumberOfMovies();
+      });
+      return total;
+    };
+    this.addProgram = function (p) {
+      if (!(p instanceof Program)) {
+        throw new Error('Invalid program input!');
+      }
+      this.programList.push(p);
+    };
+    this.getData = function () {
+      var result =
+        this.name +
+        ' festival has ' +
+        this.getTotalNumberOfMovies() +
+        ' movie titles';
+      this.programList.forEach(function (program) {
+        result += '\n\t' + program.getData();
+      });
+      return result;
+    };
+  }
+
+  function createMovie(t, l, g) {
+    var genre = new Genre(g);
+    var movie = new Movie(t, genre, l);
+    return movie;
+  }
+
+  function createProgram(d) {
+    return new Program(d);
+  }
+
+  //Testing
+  try {
+    var kustendorf = new Festival('Kustendorf');
+
+    // var sundayProgram = createProgram('12/24/2022');
+    // var mondayProgram = createProgram('12/25/2022');
+
+    // var rushHours = createMovie('Rush Hour', 95, 'action');
+    // var theRing = createMovie('The Ring', 103, 'horror');
+    // var frida = createMovie('Frida', 87, 'drama');
+    // var tropicThunder = createMovie('Tropic Thunder', 91, 'comedy');
+
+    // sundayProgram.addMovie(rushHours);
+    // sundayProgram.addMovie(theRing);
+    // mondayProgram.addMovie(frida);
+    // mondayProgram.addMovie(tropicThunder);
+
+    // kustendorf.addProgram(sundayProgram);
+    // kustendorf.addProgram(mondayProgram);
+
+    console.log(kustendorf.getData());
+  } catch (error) {
+    console.log(error.message);
+  }
+})();
+
+let result = (function() {
+
+  let val = 'Laurence';
+  return val;
+  
+})();
+console.log(result);
+
+function getRecursive(nr) {
+
+  console.log(nr);
+  if (nr > 0) {
+    getRecursive(--nr);
+  }
+}
+getRecursive(3);
+
+function dr(nr) {
+
+  console.log('Outer');
+  function dr2(x) {
+    console.log(x+7);
+    console.log('can access ', nr);
+  }
+  dr2(nr);
+
+}
+dr(2);
+
+function ds(nr) {
+
+  ds2(nr);
+  function ds2(x) {
+    let z = 10;
+    console.log('ne moze', z);
+  }
+}
+ds(3);
+
+
+function ds(nr) {
+
+  ds2(nr);
+  function ds2(x) {
+    let z = 10;
+    
+  }
+}
+ds(3);
+
+
+(function () {
+
+
+  function Genre(n) {
+
+    this.name = n;
+    this.getData = function () {
+      var first = this.name[0];
+      var last = this.name[this.name.length - 1];
+      var result = first + last;
+      return result.toUpperCase();
+
+    }  
+  }
+  
+  function Movie(t, g, l) {
+
+    this.title = t;
+    this.genre = g;
+    this.lengthMovie = l;
+    this.getData = function () {
+
+      return this.title + this.lengthMovie + this.genre.getData();
+
+    } 
+  }
+
+  
+
+  function Program(d) {
+
+    this.date = new Date(d);
+    this.movieList = [];
+    this.getNumberOfMovies = function() {
+      return this.movieList.length;
+    }
+    this.addMovie = function (m) {
+
+        this.movieList.push(m);
+
+    }
+
+    this.getTotalLength = function () {
+      var total = 0;
+      this.movieList.forEach(function(movie) {
+
+        total += movie.lengthMovie
+
+      });
+      return total;
+    }
+    this.getData = function () {
+      var day = this.date.getDate();
+      var month = this.date.getMonth() + 1;
+      var year = this.date.getFullYear();
+      var result =
+        day +
+        '.' +
+        month +
+        '.' +
+        year +
+        ', program duration ' +
+        this.getTotalLength() +
+        'min';
+      this.movieList.forEach(function (movie) {
+        result += '\n\t\t' + movie.getData();
+      });
+      return result;
+    };
+
+  }
+
+  function Festival(n) {
+
+    this.name = n;
+    this.programList = [];
+    this.getTotalNumberOfMovies = function () {
+
+        var total = 0;
+        this.programList.forEach(function(program) {
+
+          total += program.getNumberOfMovies();
+
+        } )
+        return total;
+    }
+
+    this.addProgram = function (p) {
+      if (!(p instanceof Program)) {
+        throw new Error ('Invalid program input');
+      }
+    this.programList.push(p);
+    };
+    this.getData = function () {
+
+        var result = this.name + 'festival has' + this.getTotalNumberOfMovies() + 'movie titles';
+        this.programList.forEach(function(program) {
+          result += '\n\t\t' + program.getData();
+        })
+        return result;
+    }
+  }
+
+})();
+
+
+
+
+function MemberOfOnlineGroup4(n, m){
+  this.name = n;
+  this.memory = m;
+};
+var life = new MemberOfOnlineGroup4('Dario',['sorrow', 'happy']);
+function happy_new_year_2023(your_life) {
+  var i = 2022;
+  while (i >= 0){
+      if (your_life.memory[i] === ('sorrow'|| 'pain' || 'angry' || 'hate' || 'envy' || 'sadness' || 'hopeless')){
+          delete your_life.memory[i]; //free memory :);
+      } else {
+          //keep memory fresh :);
+      }
+      i--;
+  };
+  var happiness = 'Everything what you think, what you say, and what you do are in harmony.';
+  your_life.year2023 = [];
+  var date = Math.floor(new Date().getTime()/1000/60/60/24);
+  var date2023 = Math.floor(new Date('1 January 2024').getTime()/1000/60/60/24);
+  for (var i = date; i < date2023 ; i++){
+      your_life.year2023.push(happiness);
+  }
+  /* never come out of this loop*/
+  return your_life;
+}
+var new_year_wishes_to_every_member_of_online_group4 = happy_new_year_2023(life);
+console.log(new_year_wishes_to_every_member_of_online_group4);
+ 
+function Product(name, price, expirationDate) {
+  this.id = Math.floor(Math.random() * 90000) + 10000;
+  this.name = name;
+  this.price = price;
+  this.expirationDate = expirationDate;
+}
+/* ●	ShoppingBag - a list of products (initially empty; function constructor does not have any input parameters) */
+function ShoppingBag() {
+  this.products = [];
+}
+/* Add getInfo method to Product. It should return a formatted string containing product code (the first and last letter of the name together with the product id), name and price. */
+Product.prototype.getInfo = function() {
+  return this.name[0] + this.name[this.name.length - 1] + this.id + ', ' + this.name + ', ' + this.price;
+}
+/* "Banana" -> BA32784, Banana, 129.31 */
+var banana = new Product('Banana', 129.31, new Date(2018, 10, 10));
+console.log(banana.getInfo());
+/* Add addProduct method to ShoppingBag. It should receive a Product and add it to the product list. You can add a product to the list only if it has a valid expiration date. */
+ShoppingBag.prototype.addProduct = function(product) {
+  if (product.expirationDate > new Date()) {
+    this.products.push(product);
+  }
+}
+/* Add a method to ShoppingBag that calculates the average product price of products in your product list and prints out this value with the precision of three decimals. */
+ShoppingBag.prototype.averageProductPrice = function() {
+  var sum = 0;
+  for (var i = 0; i < this.products.length; i++) {
+    sum += this.products[i].price;
+  }
+  return (sum / this.products.length).toFixed(3);
+}
+/* Add getMostExpensive method that finds the most expensive product and prints out its info. */
+ShoppingBag.prototype.getMostExpensive = function() {
+  var mostExpensive = this.products[0];
+  for (var i = 1; i < this.products.length; i++) {
+    if (this.products[i].price > mostExpensive.price) {
+      mostExpensive = this.products[i];
+    }
+  }
+  return mostExpensive.getInfo();
+}
+/* Add calculateTotalPrice method to ShoppingBag that calculates the total price of products in the shopping bag list. */
+ShoppingBag.prototype.calculateTotalPrice = function() {
+  var sum = 0;
+  for (var i = 0; i < this.products.length; i++) {
+    sum += this.products[i].price;
+  }
+  return sum;
+}
+/* Create a constructor function with properties representing the following: */
+
+/* ●	PaymentCard - account balance (number with 2 decimal places), active or inactive status, valid until date */
+function PaymentCard(accountBalance, active, validUntilDate) {
+  this.accountBalance = accountBalance;
+  this.active = active;
+  this.validUntilDate = validUntilDate;
+}
+/* Create checkoutAndBuy function which receives shopping bag and payment card and prints if the purchase is successful or not. Purchase is successful only if the amount on the card is greater or equal to the total price of products in the shopping bag. If there is not enough money, print out the amount that is missing to complete the purchase. */ 
+  
+"use strict";
+(function () {
+  console.log("Hi");
+
+  var Product = function (
+    name,
+    price,
+    expDate,
+    id = (Math.random() * 5).toFixed(4)
+  ) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.expirationData = new Date(expDate);
+    this.getInfo = function () {
+      return (
+        this.name.slice(0, 1).toUpperCase() +
+        this.name.slice(-1).toUpperCase() +
+        this.id.split(".").join("") +
+        ", " +
+        this.name +
+        ", " +
+        this.price.toFixed(2)
+      );
+    };
+  };
+  var ShoppingBag = function () {
+    this.listOfProducts = [];
+    this.addProduct = function (product) {
+      if (!(product instanceof Product))
+        throw new Error("Invalid Product Input");
+      if (new Date() > product.expirationData)
+        throw new Error("Cant add product whose exp date expired");
+      this.listOfProducts.push(product);
+    };
+
+    this.calcTotal = function () {
+      return this.listOfProducts.reduce((acc, el) => {
+        acc += el.price;
+        return acc;
+      }, 0);
+    };
+
+    this.calcAvragePrice = function () {
+      return this.calcTotal() / this.listOfProducts.length;
+    };
+    this.getMostExpensive = function () {
+      return this.listOfProducts.reduce((cur, next) => {
+        if (cur.price < next.price) {
+          cur = next;
+        }
+        return cur;
+      });
+    };
+  };
+
+  var PaymentCard = function (accBalance, status, valid) {
+    this.accountBalance = accBalance.toFixed(2);
+    if (!status) throw new Error("Invalid Card status");
+    this.status = status;
+    this.validityDate = new Date(valid);
+    this.updateBalance = function (amount) {
+      this.accountBalance = this.accountBalance - amount;
+    };
+  };
+
+  var checkoutAndBuy = function (shoppingBag, card) {
+    var isValid = shoppingBag.calcTotal() < card.accountBalance;
+    var calcDiference = shoppingBag.calcTotal() - card.accountBalance;
+    if (!isValid)
+      throw new Error("Purchase not completed, you need " + calcDiference);
+    card.updateBalance(shoppingBag.calcTotal());
+    return "Purchase successful";
+  };
+
+  try {
+    var prodArr = [
+      { name: "Banana", price: 25.88, date: "12/28,2022" },
+      { name: "Ananas", price: 15.87, date: "10/15,2023" },
+      { name: "PC", price: 1000.99, date: "12/28,2023" },
+      { name: "Iphone", price: 900.99, date: "02/05,2023" },
+    ];
+    var newProdArr = prodArr.map(
+      (el) => new Product(el.name, el.price, el.date)
+    );
+
+    var [prod, prod2, prod3, prod4] = newProdArr;
+
+    var shopBag = new ShoppingBag();
+
+    newProdArr.forEach((el) => shopBag.addProduct(el));
+
+    var myCard = new PaymentCard(2850.855555, true, "12/11/2024");
+    var data = checkoutAndBuy(shopBag, myCard);
+
+    console.log(data, myCard.accountBalance);
+  } catch (error) {
+    console.log(error.message);
+  }
+})();
+
+

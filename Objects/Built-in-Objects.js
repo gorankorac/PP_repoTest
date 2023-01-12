@@ -8,6 +8,18 @@ var b = arr.map(item => [item, item]).flat();
 
 console.log(b);
 
+
+var arr = [2, 4, 7, 11, -2, 1]
+function duplicate(arr) {
+  var newArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    newArr.push(arr[i]);
+    newArr.push(arr[i]);
+  }
+  return newArr;
+}
+console.log(duplicate(arr));
+
 // 2.	Write a functional expression that removes all duplicates in a given array.
 // Input: [8, 13, 8, 9, 12, 8, 1, 1, 4, 13]
 // Output: [1, 4, 8, 9, 12, 13] 
@@ -24,12 +36,24 @@ function remDuplicates(data) {
   return unique;
 }
 console.log(remDuplicates(t));
+// drugi nacin bolji
+var removeDuplicates = function(array) {
+  var unique = [];
+  for (var i = 0; i < array.length; i++) {
+    if (unique.indexOf(array[i]) === -1) {
+      unique.push(array[i]);
+    }
+  }
+  return unique;
+};
+ Output: [1, 4, 8, 9, 12, 13] 
+var output = removeDuplicates(input);
 
 // a.	Write a function that checks if a given array has odd number of elements.
 // Input: [1, 2, 9, 2, 1]
 // Output: true
 
-var y = [1, 2, 9, 1] 
+var y = [1, 2, 9, 2, 1] 
 
 var odds=[];
 y.forEach((num) => { 
