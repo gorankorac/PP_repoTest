@@ -1,0 +1,116 @@
+/* *,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wraper {
+  width: 1200px;
+  /* background-color: red; */
+  /* display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 3px rgb(107, 107, 107);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+input {
+  width: 95%;
+  align-self: center;
+}
+button,
+select {
+  width: 95%;
+  text-align: center;
+}
+button {
+  background-color: #4CAF4F;
+  color: #fff;
+  padding: 5px 0;
+} */ */
+
+body {
+  background-color: blanchedalmond;
+  display: flex;
+  
+}
+
+.container {
+  width: 1200px;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightyellow;
+  margin: auto;
+  border: solid blue 1px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+.One {
+  border: solid blue 1px;
+  width: 800px;
+  height: 750px;
+  
+}
+
+.form1 {
+  border: solid blue 1px;
+  width: 750px;
+  height: 250px;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.form2 {
+  border: solid blue 1px;
+  width: 750px;
+  height: 300px;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.title, .length, .genre, .btn {
+  width: 720px;
+  
+}
+
+.btn {
+  background-color: lightgreen;
+  height: 25px;
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 4px;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+h3 {
+  padding-left: 20px;
+}
+
+.date1, .btn1, .film, .btn2, .programlist {
+  width: 700px;
+}
+
+.btn1, .btn2 {
+  background-color: lightgreen;
+  height: 25px;
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 4px;
+}

@@ -1,0 +1,69 @@
+body {
+  background-color: blanchedalmond;
+   display: flex; 
+  
+}
+
+.container {
+  width: 1000px;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightyellow;
+  margin: auto;
+  border: solid blue 1px;
+}
+
+.jedan {
+  width: 1000px;
+  height: 350px;
+  background-image: url(https://images.pexels.com/photos/5466284/pexels-photo-5466284.jpeg?auto=compress&cs=tinysrgb&w=1600);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.dva {
+
+  display: flex;
+  height: 35px;
+  gap: 15px;
+  padding-top: 10px;
+  
+}
+
+.dva-1 {
+  width: 120px;
+}
+
+.gren {
+
+  background-color: lightseagreen;
+  width: 200px;
+  height: 25px;
+
+}
+
+.crveno {
+
+  background-color: lightcoral;
+  width: 200px;
+  height: 25px;
+
+}
+
+.tri {
+
+  display: flex;
+  gap: 65px;
+  background-color: ;
+  align-items: center;
+  margin: auto;
+  margin-top: 25px;
+
+}
