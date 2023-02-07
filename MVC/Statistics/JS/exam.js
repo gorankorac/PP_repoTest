@@ -48,6 +48,12 @@ class Exam {
   hasPassed() {
    return this.grade > 5 ? true : false;
   }
+  clearInputs() {
+    inputSubject.value = '';
+    inputName.value = '';
+    inputGrade.value = '';
+    errorInput.textContent = '';
+  }
 }
 
 // export default Exam;
@@ -62,7 +68,7 @@ var l = new Exam(a, b, '8');
 console.log(l);
 console.log(l.getExamInfo());
 
-var u = new Exam(new Subject('matis'), new Student('kolo', 'kojot'), '8');
+// var u = new Exam(new Subject('matis'), new Student('kolo', 'kojot'), '8');
  console.log(u);
  console.log(u.getExamInfo());
 console.log(u.hasPassed());

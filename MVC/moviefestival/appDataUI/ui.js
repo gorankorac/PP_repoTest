@@ -86,6 +86,7 @@ function addProgram2() {
       li.textContent = program.getData();
       console.log(li);
       ulProgramList.appendChild(li);
+     
   
       var option = document.createElement('option');
       option.setAttribute('value', index);
@@ -106,10 +107,11 @@ function addProgram2() {
        console.log(movieIndex);
       var programIndex = selectProgramList.value;
       console.log(programIndex);
-      return {
-        movie: movieIndex,
-        program: programIndex
-      }
+      return movieIndex, programIndex
+      // {
+      //   movie: movieIndex,
+      //   program: programIndex
+      // }
 
       // var movie = festival.listOfMovies[movieIndex];
       // console.log(movie);

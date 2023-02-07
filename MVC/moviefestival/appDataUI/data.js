@@ -24,8 +24,8 @@ class Genre {
     }
 }
 
-var a = new Genre('action');
-console.log(a.getData());
+// var a = new Genre('action');
+// console.log(a.getData());
 
 class Movie  {
   constructor (t, l, g) {
@@ -101,9 +101,6 @@ class Program {
     program.listOfMovies.push(movie);
     var programLi = document.querySelector()
   }
-
-
-
 
 return {
 
